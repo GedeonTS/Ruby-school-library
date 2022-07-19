@@ -2,55 +2,57 @@
 
 # Project Name
 
-> Description the project.
+> A library  Implemented with  OOP concepts of   encapsulation and inheritance using of objects and classes.
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+- Ruby
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
+
+- Git
+- Ruby
+- A Code editor (VSCODE,...).
+-  Google Chrome(or another browser).
+
+You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
+
+Likewise for Ruby installation.
+```
+$ ruby --version && irb
+```
+
 ### Setup
+
+Clone the repository using the GitHub link provided below.
 
 ### Install
 
-### Usage
+In the terminal, go to your file directory and run this command.
 
-### Run tests
-
-### Deployment
+```
+$ git clone https://github.com/mwenyoa/oop_school_library.git
+```
 
 
 
 ## Authors
 
-👤 **Author1**
+👤 **GedeonTS**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@GedeonTS](https://github.com/GedeonTS)
+- Twitter: [@gedeon191](https://twitter.com/gedeon191)
+- LinkedIn: [ushinid gedeon](https://linkedin.com/in/ushinid-gedeon)
 
 ## 🤝 Contributing
 
