@@ -1,4 +1,7 @@
-class Person
+require_relative './nameable.rb'
+
+# Person inherit from Nameable
+class Person<Nameable
   # getters and setters
   attr_reader :id
   attr_accessor :name, :age
