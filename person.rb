@@ -38,3 +38,15 @@ class Person < Nameable
 
   private :of_age?
 end
+
+class BaseDecorator < Nameable
+  attr_accessor :nameable
+  def initialize(nameable)
+      @component=nameable
+  end
+  
+  def correct_name
+      @component.correct_name
+  end
+  
+  end
