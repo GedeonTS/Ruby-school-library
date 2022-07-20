@@ -60,3 +60,12 @@ class BaseDecorator < Nameable
   
   end
   
+
+  class TrimmerDecorator < BaseDecorator
+    
+    def correct_name
+        @component.correct_name.split('').slice(0,9).join('')
+    end
+  
+  end
+  
