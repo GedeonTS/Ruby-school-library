@@ -14,7 +14,7 @@ class Person < Nameable
 
   # contructor
   def initialize(age, name, parent_permission: true)
-    super(self)
+    super
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -40,6 +40,7 @@ class BaseDecorator < Nameable
   attr_accessor :nameable
 
   def initialize(nameable)
+    super
     @component = nameable
   end
 
