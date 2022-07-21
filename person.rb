@@ -14,7 +14,7 @@ class Person < Nameable
 
   # contructor
   def initialize(age, name, parent_permission: true)
-    super
+    super(self)
     @id = Random.rand(1..1000)
     @name = name
     @age = age
