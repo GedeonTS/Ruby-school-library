@@ -1,10 +1,8 @@
 # require_relative './nameable.rb'
 
 class Nameable
-    
   def correct_name
-      raise NotImplementedError,"#{self.class} has not implemented method '#{__method__}'"
-      @name
+    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
   end
 end
 
@@ -14,14 +12,12 @@ class Person < Nameable
   attr_reader :id
   attr_accessor :name, :age
   # contructor
-  def initialize(age, name,parent_permission: true)
+  def initialize(age, name, parent_permission: true)
     @id = Random.rand(1..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
   end
-
-  
 
   def of_age?
     @age >= 18
@@ -35,43 +31,28 @@ class Person < Nameable
   def correct_name
     @name
   end
-
   private :of_age?
 end
 
 class BaseDecorator < Nameable
   attr_accessor :nameable
   def initialize(nameable)
-      @component=nameable
+    @component = nameable
   end
-  
+
   def correct_name
-      @component.correct_name
+    @component.correct_name
   end
-  
-  end
+end
 
-     
-  class CapitalizeDecorator < BaseDecorator
-    
-    def correct_name
-        @component.correct_name.upcase
-    end
-  
+class CapitalizeDecorator < BaseDecorator
+  def correct_name
+    @component.correct_name.capitalize
   end
-  
+end
 
-  class TrimmerDecorator < BaseDecorator
-    
-    def correct_name
-        @component.correct_name.split('').slice(0,9).join('')
-    end
-  
+class TrimmerDecorator < BaseDecorator
+  def correct_name
+    @component.correct_name.split('').slice(0, 9).join('')
   end
-  
-    person = Person.new(22, 'maximilianus')
-      person.correct_name
-      capitalizedPerson = CapitalizeDecorator.new(person)
-      p capitalizedPerson.correct_name
-      capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-      p capitalizedTrimmedPerson.correct_name
+end
