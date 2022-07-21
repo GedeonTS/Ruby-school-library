@@ -1,15 +1,25 @@
-class Person
+# require_relative './nameable.rb'
+
+class Nameable
+  def correct_name
+    raise NotImplementedError, "#{self.class} has not implemented method '#{__method__}'"
+  end
+end
+
+# Person inherit from Nameable
+class Person < Nameable
+  # getters and setters
+  attr_reader :id
+  attr_accessor :name, :age
+
   # contructor
-  def initialize(age, parent_permission: true, name: 'Unknown')
+  def initialize(age, name, parent_permission: true)
+    super
     @id = Random.rand(1..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
   end
-
-  # getters and setters
-  attr_reader :id
-  attr_accessor :name, :age
 
   def of_age?
     @age >= 18
@@ -17,8 +27,36 @@ class Person
 
   #  can use service method
   def can_use_service?
-    @parent_permission == true || is_of_age?
+    @parent_permission || is_of_age?
   end
 
+  def correct_name
+    @name
+  end
   private :of_age?
+end
+
+class BaseDecorator < Nameable
+  attr_accessor :nameable
+
+  def initialize(nameable)
+    super
+    @component = nameable
+  end
+
+  def correct_name
+    @component.correct_name
+  end
+end
+
+class CapitalizeDecorator < BaseDecorator
+  def correct_name
+    @component.correct_name.capitalize
+  end
+end
+
+class TrimmerDecorator < BaseDecorator
+  def correct_name
+    @component.correct_name.chars.slice(0, 9).join
+  end
 end
