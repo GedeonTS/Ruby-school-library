@@ -13,6 +13,7 @@ class Person < Nameable
   attr_accessor :name, :age
   # contructor
   def initialize(age, name, parent_permission: true)
+    super()
     @id = Random.rand(1..1000)
     @name = name
     @age = age
@@ -36,6 +37,7 @@ end
 
 class BaseDecorator < Nameable
   attr_accessor :nameable
+
   def initialize(nameable)
     @component = nameable
   end
@@ -53,6 +55,6 @@ end
 
 class TrimmerDecorator < BaseDecorator
   def correct_name
-    @component.correct_name.split('').slice(0, 9).join('')
+    @component.correct_name.chars.slice(0, 9).join
   end
 end
