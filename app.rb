@@ -112,6 +112,15 @@ class App
     puts "Person created successfully\n"
     run
   end
-
+  
+  def create_book
+    print 'Title: '
+    title = gets.chomp
+    print 'Author: '
+    author = gets.chomp
+    new_book = Book.new(title, author)
+    @my_books.push(new_book)
+    run
+  end
   
 end
