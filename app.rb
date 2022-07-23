@@ -100,5 +100,18 @@ class App
     @people.push(student)
   end
 
+  def create_person
+    print 'Do you want to create a student or a teacher( 1 for a student or 2 for a teacher)? : '
+    person_type = gets.chomp
+    case person_type
+    when '1'
+      create_student
+    when '2'
+      create_teacher
+    end
+    puts "Person created successfully\n"
+    run
+  end
+
   
 end
