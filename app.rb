@@ -89,6 +89,16 @@ class App
     @people.push(teacher)
   end
 
+  def create_student
+    print 'Age: '
+    age = gets.chomp
+    print 'Name: '
+    name = gets.chomp
+    print 'Has parent permission? [Y/N]: '
+    permission = gets.chomp
+    student = Student.new(age, my_permission(permission), name, nil)
+    @people.push(student)
+  end
 
   
 end
