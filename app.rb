@@ -44,7 +44,7 @@ class App
       exit
     end
   end
- 
+
   def list_books
     @my_books.each_with_index do |x, index|
       puts "#{index}) Title: \"#{x.book}\", Author: #{x.author}\n"
@@ -80,7 +80,6 @@ class App
     run
   end
 
-
   def my_permission(my_char)
     case my_char
     when 'N'
@@ -89,7 +88,6 @@ class App
       true
     end
   end
-
 
   def create_teacher
     print 'Age: '
@@ -150,5 +148,4 @@ class App
     puts 'Rental added successfully'
     run
   end
-  
 end
