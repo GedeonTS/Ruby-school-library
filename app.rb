@@ -44,7 +44,12 @@ class App
       exit
     end
   end
-
+ 
+  def list_books
+    @my_books.each_with_index do |x, index|
+      puts "#{index}) Title: \"#{x.book}\", Author: #{x.author}\n"
+    end
+  end
 
 
   
