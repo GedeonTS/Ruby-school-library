@@ -57,6 +57,19 @@ class App
     end
   end
 
+  def list_rental
+    me = nil
+    print "\nID of person: "
+    person_id = gets.chomp
+
+    @my_rentals.each do |x|
+      me = x if x.person.id == person_id.to_i
+      puts "Date: #{me.date}, Book \"#{me.book.book}\" by #{me.book.author}\n"
+    end
+    puts
+    run
+  end
+
   def action_list_books
     list_books
     run
