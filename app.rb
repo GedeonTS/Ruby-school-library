@@ -67,5 +67,15 @@ class App
     run
   end
 
+
+  def my_permission(my_char)
+    case my_char
+    when 'N'
+      false
+    when 'Y'
+      true
+    end
+  end
+
   
 end
