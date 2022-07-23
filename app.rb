@@ -24,6 +24,28 @@ class App
     gets.chomp
   end
 
+  def run
+    choice = my_menu
+    case choice
+    when '1'
+      action_list_books
+    when '2'
+      action_list_people
+    when '3'
+      create_person
+    when '4'
+      create_book
+    when '5'
+      create_rental
+    when '6'
+      list_rental
+    else
+      puts 'Thanks for using this app ...'
+      exit
+    end
+  end
+
+
 
   
 end
