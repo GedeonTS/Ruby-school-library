@@ -7,18 +7,18 @@ class Nameable
 end
 
 # Person inherit from Nameable
-class Person < Nameable
+class Person
   # getters and setters
   attr_reader :id
   attr_accessor :name, :age
 
   # contructor
   def initialize(age, name, parent_permission: true)
-    super
     @id = Random.rand(1..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
+    @rentals = []
   end
 
   def of_age?
@@ -33,6 +33,11 @@ class Person < Nameable
   def correct_name
     @name
   end
+
+  def add_rental(book, date)
+    Rental.new(date, book, self)
+  end
+
   private :of_age?
 end
 
