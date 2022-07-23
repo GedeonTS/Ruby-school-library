@@ -56,9 +56,14 @@ class App
       puts "#{index}) [#{x.class.name}] Name: #{x.name}, ID: #{x.id}, Age: #{x.age}\n"
     end
   end
-  
+
   def action_list_books
     list_books
+    run
+  end
+
+  def action_list_people
+    list_people
     run
   end
 
