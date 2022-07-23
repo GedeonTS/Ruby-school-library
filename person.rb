@@ -10,7 +10,7 @@ end
 class Person
   # getters and setters
   attr_reader :id
-  attr_accessor :name, :age
+  attr_accessor :n,ame, :age
 
   # contructor
   def initialize(age, name, parent_permission: true)
