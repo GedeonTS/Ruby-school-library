@@ -2,7 +2,7 @@
 
 # School Library
 
-> A library  Implemented with  OOP concepts of   encapsulation and inheritance using of objects and classes.
+> A library  Implemented with  OOP concepts of   encapsulation and inheritance using objects and classes.
 
 
 ## Built With
